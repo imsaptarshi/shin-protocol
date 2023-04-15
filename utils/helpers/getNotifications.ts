@@ -3,8 +3,6 @@ import * as PushAPI from "@pushprotocol/restapi";
 export default async function getNotifications(address: string) {
     const notifications: [] = await PushAPI.user.getFeeds({
         user: 'eip155:80001:' + address,
-
-
         env: "staging"
     });
 
