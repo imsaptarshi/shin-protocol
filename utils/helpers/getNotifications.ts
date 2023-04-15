@@ -11,7 +11,6 @@ export default async function getNotifications(address: string) {
     const spam: [] = await PushAPI.user.getFeeds({
         user: 'eip155:80001:' + address,
         spam: true,
-
         env: "staging"
     });
     let n: any = []

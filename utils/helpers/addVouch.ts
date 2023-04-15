@@ -57,9 +57,7 @@ export default async function addVouch(sender: string, receiver: string) {
                     recipients: 'eip155:80001:' + sender,
                     channel: 'eip155:80001:0xeA88B7ad2B6663A4FC367bB1289D6EeD7a34860C',
                     env: "staging",
-
                 });
-
 
                 return transaction;
             } catch (err) {
