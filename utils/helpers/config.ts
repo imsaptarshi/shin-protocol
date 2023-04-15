@@ -18,7 +18,7 @@ let config = {
         abi: NFTabi
     },
     weightage: {
-        balance: 10,
+        balance: 20,
 
         NFT_count: [15, 20],
         chain_history: {
@@ -27,13 +27,13 @@ let config = {
 
         },
         tokens: <any>{
-            MATIC: [7, 30],
-            WETH: [6, 2],
-            ETH: [6, 2],
-            USDT: [5, 100],
-            USDC: [5, 100],
-            DAI: [5, 100],
-            OTHERS: [3, 0.0001]
+            MATIC: [10, 2],
+            WETH: [10, 0.001],
+            ETH: [10, 0.001],
+            USDT: [10, 2],
+            USDC: [10, 2],
+            DAI: [10, 2],
+            OTHERS: [5, 0.0001]
         },
         captcha: 10,
         vouching: 10,
