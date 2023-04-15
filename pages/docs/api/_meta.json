@@ -1,0 +1,6 @@
+{
+  "index": "Get Started",
+  "get-score": "GET /score/$address",
+  "post-score": "POST /score/$address",
+  "example": "Example Query"
+}

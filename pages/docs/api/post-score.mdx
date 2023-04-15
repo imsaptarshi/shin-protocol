@@ -1,0 +1,36 @@
+## POST `/score/$address`
+
+Get the on-chain trust score of an address with your **custom configurations**
+
+#### Query
+
+| key     | type     | description                            |
+| ------- | -------- | -------------------------------------- |
+| address | `string` | hexadecimal ethereum address of a user |
+
+#### Request Parameters (optional)
+
+`config {`
+
+| key                                              | type                                                                | default                                                             | <div minWidth="900px" width="100%">description</div>                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ------------------------------------------------ | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ignoreQuests                                     | `boolean`                                                           | `false`                                                             | if `true`, quest scores will be ignored in the results.                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| balance                                          | `number`                                                            | `10`                                                                | weightage of score based on the user's token balance.                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| NFT_count                                        | `number[]`                                                          | `[15, 20]`                                                          | • `NFT_count[0]` - Maximum weightage. <br/> • `NFT_count[1]` - Maximum limit of the number of NFTs to score a full point.                                                                                                                                                                                                                                                                                                                                                           |
+| chain_history                                    | `{transaction_count: number[], erc20_token_transactions: number[]}` | `{transaction_count: [20, 50], erc20_token_transactions: [10, 10]}` | • `chain_history.transaction_count[0]` - Maximum weightage for number of transactions made on chain. <br/> • `chain_history.transaction_count[1]` - Maximum limit of the number of transactions to score a full point. <br/> <br/> • `chain_history.erc20_token_transactions[0]` - Maximum weightage for number of erc20 transactions made on chain. <br/> • `chain_history.erc20_token_transactions[1]` - Maximum limit of the number of erc20 transactions to score a full point. |
+| [tokens \*](/docs/api/post-score#allowed-tokens) | `{ {{token_symbol}}: number[], ... }`                               | ----                                                                | • `tokens.[ {{token_symbol}} ][0]` - Maximum weightage for holding a token. <br/> • `tokens.[ {{token_symbol}} ][1]` - Maximum limit of the number tokens held to score a full point.<br/><br/> Example: `{ETH: [10,5], USDC:[5,100]}`                                                                                                                                                                                                                                              |
+| vouching                                         | `number`                                                            | `10`                                                                | weightage of score received by the user if they're vouched for.                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| social                                           | `number`                                                            | `10`                                                                | weightage of score received by the user if they have verified themselved socially.                                                                                                                                                                                                                                                                                                                                                                                                  |
+
+`}`
+
+##### \* Allowed Tokens
+
+> "WETH", "ETH", "MATIC", "USDT", "USDC", "SHIB", "BNB", "DAI", "HEX", "BUSD", "MKR", "LEO", "AAVE", "UNI", "WBTC", "CRO", "APE", "LINK", "WBTC", "TON", "GRT", "SAND", "ENS"
+
+#### Returns
+
+| key     | type     | description                                           |
+| ------- | -------- | ----------------------------------------------------- |
+| address | `string` | hexadecimal ethereum address of the user              |
+| result  | `float`  | trust score of the user on-chain on a scale of 0 to 1 |

@@ -1,0 +1,34 @@
+## Example Query
+
+```js
+axios.post(
+  "https://shin-protocol.up.railway.app/api/score/0x436441A8eF5b3C705652a8b0dff624152c227a6f",
+  {
+    config: {
+      balance: 20,
+      NFT_count: [10, 20],
+      chain_history: {
+        transaction_count: [20, 50],
+        erc20_token_transactions: [10, 10],
+      },
+      tokens: {
+        MATIC: [7, 30],
+        WETH: [6, 2],
+        ETH: [6, 2],
+      },
+      captcha: 5,
+      vouching: 5,
+      social: 5,
+    },
+  }
+);
+```
+
+### Response
+
+```
+{
+    "result": 0.44920678462679364,
+    "address": "0x436441A8eF5b3C705652a8b0dff624152c227a6f"
+}
+```

@@ -1,0 +1,16 @@
+## GET `/score/$address`
+
+Get the on-chain trust score of an address
+
+#### Query
+
+| key     | type     | description                            |
+| ------- | -------- | -------------------------------------- |
+| address | `string` | hexadecimal ethereum address of a user |
+
+#### Returns
+
+| key     | type     | description                                           |
+| ------- | -------- | ----------------------------------------------------- |
+| address | `string` | hexadecimal ethereum address of the user              |
+| result  | `float`  | trust score of the user on-chain on a scale of 0 to 1 |

@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.main {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 500;
+}
+body {
+  overflow: overlay;
+}
+
+.meter_parent > svg {
+  display: inline-flex;
+  vertical-align: bottom;
+  width: 270px;
+  height: 270px;
+}
+
+circle {
+  stroke: none;
+  fill: none;
+}
+
+.meter {
+  transition: stroke-dashoffset 0s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  transform-origin: center center;
+  transform: scaleX(-1) rotateY(180deg) rotateX(180deg);
+}
+
+.meter_line > .meter {
+  transition: stroke-dashoffset 1s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  transform-origin: center center;
+}
+
+body {
+  top: 0px !important;
+}
+
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+  display: none !important;
+}
+
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+  display: none !important;
+}
+
+article > p {
+  font-family: Poppins !important;
+}
